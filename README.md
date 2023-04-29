@@ -1,2 +1,2 @@
-# ican_projet_t3
+# ICAN Projet T3
 Escape Game VR
