@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d4b39634-3f4f-4170-bc23-4b5c2f6e75e1}">
+		<property name="assetPath">
+			<value>three.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.61081632653061224</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c9c68d8e-2807-490d-8dfe-c85b87c689a2}</destination>
+		</relationship>
+	</object>
+</objects>
