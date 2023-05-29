@@ -26,7 +26,7 @@ public class TwoHandGrabInteractable : XRGrabInteractable
     {
         secondInteractor = interactor;
     }
-    
+
     public void OnSecondHandRelease(XRBaseInteractor interactor)
     {
         secondInteractor = null;
@@ -36,8 +36,10 @@ public class TwoHandGrabInteractable : XRGrabInteractable
     {
         if (secondInteractor && selectingInteractor)
         {
-            selectingInteractor.attachTransform.rotation = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
+            selectingInteractor.attachTransform.rotation = Quaternion.LookRotation(
+                secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
         }
+
         base.ProcessInteractable(updatePhase);
     }
 
