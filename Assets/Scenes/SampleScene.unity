@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 246703579}
   m_Layer: 0
   m_Name: PieceThree
-  m_TagString: Untagged
+  m_TagString: MazePuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5368,7 +5368,7 @@ GameObject:
   - component: {fileID: 1777885619}
   m_Layer: 0
   m_Name: PieceTwo
-  m_TagString: Untagged
+  m_TagString: MazePuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5619,7 +5619,7 @@ GameObject:
   - component: {fileID: 1818129526}
   m_Layer: 0
   m_Name: PieceFive
-  m_TagString: Untagged
+  m_TagString: MazePuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5870,7 +5870,7 @@ GameObject:
   - component: {fileID: 1833754323}
   m_Layer: 0
   m_Name: PieceFour
-  m_TagString: Untagged
+  m_TagString: MazePuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

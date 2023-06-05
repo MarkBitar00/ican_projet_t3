@@ -1,28 +1,38 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class MazePuzzleManager : MonoBehaviour
 {
     [SerializeField] private int numberOfPiecesToAttach;
-    [SerializeField] private int currentlyAttachedPieces = 0;
+    private List<GameObject> currentlyAttachedPieces = new List<GameObject>();
 
-    [Header("Completion Events")] public UnityEvent onPuzzleCompletion;
-
-    public void AttachPiece()
+    public void AttachPiece(GameObject obj)
     {
-        currentlyAttachedPieces++;
+        currentlyAttachedPieces.Add(obj);
         CheckForPuzzleCompletion();
     }
 
     private void CheckForPuzzleCompletion()
     {
-        if (currentlyAttachedPieces < numberOfPiecesToAttach) return;
-        Debug.Log("Puzzle completed !");
-        onPuzzleCompletion.Invoke();
+        if (currentlyAttachedPieces.Count >= numberOfPiecesToAttach)
+        {
+            // TODO Play ball spawn sound
+            Invoke(nameof(DeleteObjectComponent), 1f);
+        };
+    }
+    
+    public void RemovePiece(GameObject obj)
+    {
+        currentlyAttachedPieces.Remove(obj);
     }
 
-    public void RemovePiece()
+    public void DeleteObjectComponent()
     {
-        currentlyAttachedPieces--;
+        foreach (GameObject puzzlePiece in currentlyAttachedPieces.ToArray())
+        {
+            puzzlePiece.GetComponent<XRGrabInteractable>().enabled = false;
+        }
+        // TODO spawn ball inside maze
     }
 }

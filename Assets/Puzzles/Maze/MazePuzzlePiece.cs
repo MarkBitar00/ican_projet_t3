@@ -26,7 +26,7 @@ public class MazePuzzlePiece : MonoBehaviour
         var attachedPiece = arg0.interactableObject;
         if (attachedPiece.transform.name == correctPieceTransform.name)
         {
-            puzzleManager.AttachPiece();
+            puzzleManager.AttachPiece(attachedPiece.transform.gameObject);
         }
     }
 
@@ -35,7 +35,7 @@ public class MazePuzzlePiece : MonoBehaviour
         var removedPiece = arg0.interactableObject;
         if (removedPiece.transform.name == correctPieceTransform.name)
         {
-            puzzleManager.RemovePiece();
+            puzzleManager.RemovePiece(removedPiece.transform.gameObject);
         }
     }
 }
