@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7480854472442909108}
   - component: {fileID: 6201417835742063951}
   - component: {fileID: 3331896222605387316}
-  - component: {fileID: 3503311268640524096}
+  - component: {fileID: 4298545034426237395}
   m_Layer: 0
   m_Name: MirrorBody
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3503311268640524096
-CapsuleCollider:
+--- !u!65 &4298545034426237395
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,10 +94,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000001}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940696}
 --- !u!1 &670183885905129042
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 3503311268640524096}
+  - {fileID: 4298545034426237395}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -628,7 +627,6 @@ GameObject:
   - component: {fileID: 7006128757392977487}
   - component: {fileID: 486329109144482812}
   - component: {fileID: 3843569857526605400}
-  - component: {fileID: 2544391670217460728}
   m_Layer: 0
   m_Name: MirrorSurface
   m_TagString: Untagged
@@ -701,17 +699,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2544391670217460728
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7903254781482236968}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
