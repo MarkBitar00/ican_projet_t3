@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class WatchScript : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class WatchScript : MonoBehaviour
     public GameObject watchObject;
     public GameObject hoursNeedle;
     public GameObject minutesNeedle;
+    public GameObject watchAnchor;
+
+    public GameObject ghostNeedle;
+    public GameObject ghostNeedleAnchor;
+    private GameObject _theNeedleHandle;
+
     public List<int> rotationLocks;
 
     private int _nextUpdate = 1;
@@ -26,8 +33,8 @@ public class WatchScript : MonoBehaviour
     private void OnEnable()
     {
         inputMap.Enable();
-        inputMap.XRIRightHand.AllJoystickInput.performed += AllJoystickInput_performed;
-        inputMap.XRIRightHand.ShowWatch.performed += ShowWatch_performed;
+        inputMap.XRILeftHand.AllJoystickInput.performed += AllJoystickInput_performed;
+        inputMap.XRILeftHand.ShowWatch.performed += ShowWatch_performed;
     }
     private void OnDisable()
     {
@@ -40,6 +47,20 @@ public class WatchScript : MonoBehaviour
         {
             _nextUpdate = Mathf.FloorToInt(Time.time) + 1;
             UpdateEverySecond();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(_theNeedleHandle != null && _theNeedleHandle.transform.localEulerAngles.x > 5 && _theNeedleHandle.transform.localEulerAngles.x < 355  && _theNeedleHandle.GetComponent<XRGrabInteractable>().isSelected)
+        {
+            float _input = _theNeedleHandle.transform.localEulerAngles.x;
+            if (_input > 180)
+            {
+                _input = (360 - _input) * -1;
+            }
+            _input *= -1;
+            InterceptHandleInteraction(_input / 45);
         }
     }
     public void UpdateEverySecond()
@@ -63,15 +84,34 @@ public class WatchScript : MonoBehaviour
             }
         }
     }
+
+    private void InterceptHandleInteraction(float _inclinaison)
+    {
+        if (actualMode == "selectionMode")
+        {
+            hoursNeedle.transform.Rotate(0, _inclinaison, 0);
+            if (!_isRotating) { _isRotating = true; }
+            if (_hadSnapped) { _hadSnapped = false; }
+        }
+        if (actualMode == "viewMode")
+        {
+                GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent, _inclinaison);
+        }
+    }
     private void ShowWatch_performed(InputAction.CallbackContext obj)
     {
         if (!watchObject.activeSelf)
         {
+            ghostNeedleAnchor.transform.position = watchAnchor.transform.position;
+            ghostNeedleAnchor.transform.rotation = watchAnchor.transform.rotation;
+            _theNeedleHandle = Instantiate<GameObject>(ghostNeedle, ghostNeedleAnchor.transform);
             watchObject.SetActive(true);
             actualMode = "selectionMode";
         }
         else
         {
+            Destroy(_theNeedleHandle);
+            hoursNeedle.transform.localEulerAngles = Vector3.zero;
             watchObject.SetActive(false);
             GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfDeativationEvent);
         }
