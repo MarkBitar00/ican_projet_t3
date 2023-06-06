@@ -12,6 +12,11 @@ public class WatchScript : MonoBehaviour
     public GameObject watchObject;
     public GameObject hoursNeedle;
     public GameObject minutesNeedle;
+    public GameObject watchAnchor;
+
+    public GameObject ghostNeedle;
+    public GameObject ghostAnchor;
+
     public List<int> rotationLocks;
 
     private int _nextUpdate = 1;
@@ -26,8 +31,8 @@ public class WatchScript : MonoBehaviour
     private void OnEnable()
     {
         inputMap.Enable();
-        inputMap.XRIRightHand.AllJoystickInput.performed += AllJoystickInput_performed;
-        inputMap.XRIRightHand.ShowWatch.performed += ShowWatch_performed;
+        inputMap.XRILeftHand.AllJoystickInput.performed += AllJoystickInput_performed;
+        inputMap.XRILeftHand.ShowWatch.performed += ShowWatch_performed;
     }
     private void OnDisable()
     {
@@ -67,12 +72,16 @@ public class WatchScript : MonoBehaviour
     {
         if (!watchObject.activeSelf)
         {
+            ghostAnchor.transform.position = watchAnchor.transform.position;
+            ghostNeedle.SetActive(true);
             watchObject.SetActive(true);
             actualMode = "selectionMode";
         }
         else
         {
+            hoursNeedle.transform.localEulerAngles = Vector3.zero;
             watchObject.SetActive(false);
+            ghostNeedle.SetActive(false);
             GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfDeativationEvent);
         }
     }

@@ -372,6 +372,24 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ShowWatch"",
+                    ""type"": ""Button"",
+                    ""id"": ""152afc3d-50fb-473e-a608-9f1ff56b622a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AllJoystickInput"",
+                    ""type"": ""Value"",
+                    ""id"": ""84b4576c-33c9-4959-84e2-896e44288beb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -581,6 +599,28 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Aim Flags"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""168628cc-20ae-4c04-ac8a-0c5bf5e667c3"",
+                    ""path"": ""<XRController>{LeftHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""ShowWatch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c76353de-a678-47ce-a15e-33d35d827597"",
+                    ""path"": ""<XRController>{LeftHand}/primary2DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""AllJoystickInput"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -2251,6 +2291,8 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         m_XRILeftHand_PinchPosition = m_XRILeftHand.FindAction("Pinch Position", throwIfNotFound: true);
         m_XRILeftHand_PokePosition = m_XRILeftHand.FindAction("Poke Position", throwIfNotFound: true);
         m_XRILeftHand_PokeRotation = m_XRILeftHand.FindAction("Poke Rotation", throwIfNotFound: true);
+        m_XRILeftHand_ShowWatch = m_XRILeftHand.FindAction("ShowWatch", throwIfNotFound: true);
+        m_XRILeftHand_AllJoystickInput = m_XRILeftHand.FindAction("AllJoystickInput", throwIfNotFound: true);
         // XRI LeftHand Interaction
         m_XRILeftHandInteraction = asset.FindActionMap("XRI LeftHand Interaction", throwIfNotFound: true);
         m_XRILeftHandInteraction_Select = m_XRILeftHandInteraction.FindAction("Select", throwIfNotFound: true);
@@ -2482,6 +2524,8 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_XRILeftHand_PinchPosition;
     private readonly InputAction m_XRILeftHand_PokePosition;
     private readonly InputAction m_XRILeftHand_PokeRotation;
+    private readonly InputAction m_XRILeftHand_ShowWatch;
+    private readonly InputAction m_XRILeftHand_AllJoystickInput;
     public struct XRILeftHandActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -2497,6 +2541,8 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         public InputAction @PinchPosition => m_Wrapper.m_XRILeftHand_PinchPosition;
         public InputAction @PokePosition => m_Wrapper.m_XRILeftHand_PokePosition;
         public InputAction @PokeRotation => m_Wrapper.m_XRILeftHand_PokeRotation;
+        public InputAction @ShowWatch => m_Wrapper.m_XRILeftHand_ShowWatch;
+        public InputAction @AllJoystickInput => m_Wrapper.m_XRILeftHand_AllJoystickInput;
         public InputActionMap Get() { return m_Wrapper.m_XRILeftHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2539,6 +2585,12 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
             @PokeRotation.started += instance.OnPokeRotation;
             @PokeRotation.performed += instance.OnPokeRotation;
             @PokeRotation.canceled += instance.OnPokeRotation;
+            @ShowWatch.started += instance.OnShowWatch;
+            @ShowWatch.performed += instance.OnShowWatch;
+            @ShowWatch.canceled += instance.OnShowWatch;
+            @AllJoystickInput.started += instance.OnAllJoystickInput;
+            @AllJoystickInput.performed += instance.OnAllJoystickInput;
+            @AllJoystickInput.canceled += instance.OnAllJoystickInput;
         }
 
         private void UnregisterCallbacks(IXRILeftHandActions instance)
@@ -2576,6 +2628,12 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
             @PokeRotation.started -= instance.OnPokeRotation;
             @PokeRotation.performed -= instance.OnPokeRotation;
             @PokeRotation.canceled -= instance.OnPokeRotation;
+            @ShowWatch.started -= instance.OnShowWatch;
+            @ShowWatch.performed -= instance.OnShowWatch;
+            @ShowWatch.canceled -= instance.OnShowWatch;
+            @AllJoystickInput.started -= instance.OnAllJoystickInput;
+            @AllJoystickInput.performed -= instance.OnAllJoystickInput;
+            @AllJoystickInput.canceled -= instance.OnAllJoystickInput;
         }
 
         public void RemoveCallbacks(IXRILeftHandActions instance)
@@ -3295,6 +3353,8 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         void OnPinchPosition(InputAction.CallbackContext context);
         void OnPokePosition(InputAction.CallbackContext context);
         void OnPokeRotation(InputAction.CallbackContext context);
+        void OnShowWatch(InputAction.CallbackContext context);
+        void OnAllJoystickInput(InputAction.CallbackContext context);
     }
     public interface IXRILeftHandInteractionActions
     {

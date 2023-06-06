@@ -350,6 +350,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ShowWatch",
+                    "type": "Button",
+                    "id": "152afc3d-50fb-473e-a608-9f1ff56b622a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AllJoystickInput",
+                    "type": "Value",
+                    "id": "84b4576c-33c9-4959-84e2-896e44288beb",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -559,6 +577,28 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Aim Flags",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "168628cc-20ae-4c04-ac8a-0c5bf5e667c3",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "ShowWatch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c76353de-a678-47ce-a15e-33d35d827597",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Generic XR Controller",
+                    "action": "AllJoystickInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
