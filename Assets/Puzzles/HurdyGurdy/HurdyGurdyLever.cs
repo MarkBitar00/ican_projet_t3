@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class HurdyGurdy : MonoBehaviour
+public class HurdyGurdyLever : MonoBehaviour
 {
+    public bool isMoving = false;
+    
     private Vector3 lastPosition;
-    private bool isMoving = false;
 
     private void Start()
     {
