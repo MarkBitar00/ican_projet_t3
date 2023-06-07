@@ -15,11 +15,11 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - Interactable
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Socket1Watch
+  - Socket5Watch
+  - Socket7Watch
+  - Socket8Watch
+  - Socket10Watch
   - 
   - 
   - 

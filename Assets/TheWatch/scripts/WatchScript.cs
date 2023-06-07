@@ -20,6 +20,7 @@ public class WatchScript : MonoBehaviour
     private GameObject _theNeedleHandle;
 
     public List<int> rotationLocks;
+    public List<GameObject> hoursFragments;
 
     private int _nextUpdate = 1;
     private bool _isRotating;
@@ -30,12 +31,14 @@ public class WatchScript : MonoBehaviour
     {
         inputMap = new XRIDefaultInputActions();
     }
+
     private void OnEnable()
     {
         inputMap.Enable();
         inputMap.XRILeftHand.AllJoystickInput.performed += AllJoystickInput_performed;
         inputMap.XRILeftHand.ShowWatch.performed += ShowWatch_performed;
     }
+
     private void OnDisable()
     {
         inputMap.Disable();
@@ -47,7 +50,7 @@ public class WatchScript : MonoBehaviour
         {
             _nextUpdate = Mathf.FloorToInt(Time.time) + 1;
             UpdateEverySecond();
-        }
+        }      
     }
 
     private void FixedUpdate()
@@ -63,16 +66,18 @@ public class WatchScript : MonoBehaviour
             InterceptHandleInteraction(_input / 45);
         }
     }
+
     public void UpdateEverySecond()
     {
         AutoSnapping();
     }
+
     private void AllJoystickInput_performed(InputAction.CallbackContext obj)
     {
         Vector2 _input = obj.ReadValue<Vector2>();
         if(actualMode == "selectionMode")
         {
-            hoursNeedle.transform.Rotate(0, _input[0], 0);
+            hoursNeedle.transform.Rotate(-_input[0], 0, 0);
             if (!_isRotating) { _isRotating = true; }
             if (_hadSnapped) { _hadSnapped = false; }
         }
@@ -80,7 +85,8 @@ public class WatchScript : MonoBehaviour
         {
             if(_input.x != 0)
             {
-                GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent, _input.x);
+                minutesNeedle.transform.Rotate(-_input[0], 0, 0);
+                GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent, -_input.x);
             }
         }
     }
@@ -89,21 +95,23 @@ public class WatchScript : MonoBehaviour
     {
         if (actualMode == "selectionMode")
         {
-            hoursNeedle.transform.Rotate(0, _inclinaison, 0);
+            hoursNeedle.transform.Rotate(-_inclinaison, 0, 0);
             if (!_isRotating) { _isRotating = true; }
             if (_hadSnapped) { _hadSnapped = false; }
         }
         if (actualMode == "viewMode")
         {
-                GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent, _inclinaison);
+            minutesNeedle.transform.Rotate(-_inclinaison, 0, 0);
+            GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent, _inclinaison);
         }
     }
+
     private void ShowWatch_performed(InputAction.CallbackContext obj)
     {
         if (!watchObject.activeSelf)
         {
             ghostNeedleAnchor.transform.position = watchAnchor.transform.position;
-            ghostNeedleAnchor.transform.rotation = watchAnchor.transform.rotation;
+            ghostNeedleAnchor.transform.eulerAngles = new Vector3(0, watchAnchor.transform.eulerAngles.y, 0);
             _theNeedleHandle = Instantiate<GameObject>(ghostNeedle, ghostNeedleAnchor.transform);
             watchObject.SetActive(true);
             actualMode = "selectionMode";
@@ -116,19 +124,22 @@ public class WatchScript : MonoBehaviour
             GeneralManager.instance.animationRegulator.CallEvent(GeneralManager.instance.animationRegulator.nameOfDeativationEvent);
         }
     }
-    private int GetClosestWatchAnchor(float _yRotation)
+
+    private int GetClosestWatchAnchor(Transform _needleTransform)
     {
-        float _data = _yRotation % 360;
+        float _data = FixWeirdRotation(_needleTransform);
+        
         int _bestLock = 0;
         foreach (int _rotation in rotationLocks)
         {
-            if (Mathf.Abs(_rotation - _yRotation) < Mathf.Abs(_bestLock - _yRotation))
+            if (Mathf.Abs(_rotation - _data) < Mathf.Abs(_bestLock - _data))
             {
                 _bestLock = _rotation;
             }
         }
         return _bestLock;
     }
+
     private void AutoSnapping()
     {
         if (_isRotating)
@@ -137,15 +148,41 @@ public class WatchScript : MonoBehaviour
         }
         else if (!_hadSnapped)
         {
-            hoursNeedle.transform.localEulerAngles = new Vector3(0, GetClosestWatchAnchor(hoursNeedle.transform.localEulerAngles.y), 0);
+            hoursNeedle.transform.localEulerAngles = new Vector3(GetClosestWatchAnchor(hoursNeedle.transform),0, 0);
             _hadSnapped = true;
             Invoke("ToViewMode", 0.6f);
         }
     }
+
+    private float FixWeirdRotation(Transform _weirdRotation)
+    {
+        float _data = 0;
+        if (_weirdRotation.localEulerAngles.y == 0)
+        {
+            _data = _weirdRotation.localEulerAngles.x;
+        }
+        else
+        {
+            _data = ((360 - _weirdRotation.localEulerAngles.x) + 180)%360;
+        }
+        return _data;
+    }
+
     private void ToViewMode()
     {
-        int _time = ((int)hoursNeedle.transform.localEulerAngles.y) / 30;
+        int _time = 12 - ((int)FixWeirdRotation(hoursNeedle.transform) / 30);
         echosManager.CallEvent(_time + "h");
         actualMode = "viewMode";
+    }
+
+    public void AddHoursToWatch(int _hour)
+    {
+        rotationLocks.Add(360 - (_hour * 30));
+        foreach (GameObject _fragment in hoursFragments) {
+            if(_fragment.name =="heure_" + _hour)
+            {
+                _fragment.SetActive(true);
+            }
+        }
     }
 }
