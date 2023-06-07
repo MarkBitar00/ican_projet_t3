@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class HurdyGurdyKey : MonoBehaviour
 {
-    [SerializeField] private HurdyGurdyLever lever;
+    [SerializeField] private HurdyGurdyManager melodyManager;
+    [SerializeField] public int note;
     
     public void PlayNote()
     {
-        if (!lever.isMoving) return;
+        // if (!melodyManager.lever.isMoving) return;
         Debug.Log("Played note " + transform.name);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/one");
+        if (melodyManager.isSolved) return;
+        melodyManager.AddNoteToSequence(note);
     }
 }
