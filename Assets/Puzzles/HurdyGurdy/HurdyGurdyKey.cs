@@ -7,7 +7,7 @@ public class HurdyGurdyKey : MonoBehaviour
     
     public void PlayNote()
     {
-        // if (!melodyManager.lever.isMoving) return;
+        if (!melodyManager.lever.isMoving) return;
         Debug.Log("Played note " + transform.name);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/one");
         if (melodyManager.isSolved) return;
