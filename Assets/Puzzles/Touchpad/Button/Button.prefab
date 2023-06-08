@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5618787629936802736}
   - component: {fileID: 6796758362614809011}
   - component: {fileID: 5883230589053861619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,9 +184,10 @@ GameObject:
   - component: {fileID: 7904050708875996800}
   - component: {fileID: 7904050708875996801}
   - component: {fileID: 7904050708875996926}
+  - component: {fileID: 4735118844078774533}
   - component: {fileID: 3316241127081684227}
   - component: {fileID: 6375517466441867575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,8 +271,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.99999493, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &4735118844078774533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904050708875996924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9613047, y: 0.81254727, z: 0.8008254}
+  m_Center: {x: -0.4806533, y: -0.0030232044, z: -0.005493208}
 --- !u!114 &3316241127081684227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 4735118844078774533}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

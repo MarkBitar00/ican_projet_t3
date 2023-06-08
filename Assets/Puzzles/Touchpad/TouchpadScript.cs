@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TouchpadScript : MonoBehaviour
 {
     public string password;
     public TextMeshPro screenToDisplay;
     private string _enteredPassword = "";
+    public int _aditionalCondition;
+    public HingeJoint interactableToUnlock;
 
     public void AddKeyToPassword(string _key)
     {
@@ -23,9 +26,15 @@ public class TouchpadScript : MonoBehaviour
     }
     private void CheckPassword()
     {
-        if (password ==  _enteredPassword)
+        if (password ==  _enteredPassword && _aditionalCondition <= 0)
         {
             screenToDisplay.color = Color.green;
+            if(interactableToUnlock != null)
+            {
+                JointLimits _limit = interactableToUnlock.limits;
+                _limit.max = 45;
+                interactableToUnlock.limits = _limit;
+            }
         }
         else
         {
@@ -33,11 +42,15 @@ public class TouchpadScript : MonoBehaviour
             Invoke("ResetPassword",1);
         }
     }
-
     public void ResetPassword()
     {
         screenToDisplay.color = Color.black;
         _enteredPassword = "";
         screenToDisplay.text = _enteredPassword;
+    }
+
+    public void CheckAditionalCondition(int _aditionnalConditionChecked)
+    {
+        _aditionalCondition -= _aditionnalConditionChecked;
     }
 }
