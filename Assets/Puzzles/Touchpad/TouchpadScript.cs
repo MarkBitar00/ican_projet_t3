@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class TouchpadScript : MonoBehaviour
 {
@@ -48,7 +49,6 @@ public class TouchpadScript : MonoBehaviour
         _enteredPassword = "";
         screenToDisplay.text = _enteredPassword;
     }
-
     public void CheckAditionalCondition(int _aditionnalConditionChecked)
     {
         _aditionalCondition -= _aditionnalConditionChecked;
