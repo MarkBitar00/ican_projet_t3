@@ -30,7 +30,7 @@ public class ReflectiveLaser : MonoBehaviour
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, rayHit.point);
                 remainingLength -= Vector3.Distance(ray.origin, rayHit.point);
                 ray = new Ray(rayHit.point, Vector3.Reflect(ray.direction, rayHit.normal));
-                if (!rayHit.collider.CompareTag("Mirror")) break;
+                if (!rayHit.collider.transform.parent.CompareTag("Mirror")) break;
             }
             else
             {
