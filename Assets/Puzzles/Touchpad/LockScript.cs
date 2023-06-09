@@ -1,22 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRSocketInteractor))]
 public class LockScript : MonoBehaviour
 {
-    public HingeJoint _blockedObject;
-    public float _newMinLimit;
-    public float _newMaxLimit;
+    public GameObject _key;
+    public Vector3 _rotationToOpen;
+    [SerializeField] private UnityEvent Unlocked; // permet d'avoir la liste des callback à un event
 
-    public void modifyJointLimit()
+    private void FixedUpdate()
     {
-        JointLimits _newLimits = new JointLimits();
-        _newLimits.max = _newMaxLimit;
-        _newLimits.min = _newMinLimit;
-        _blockedObject.limits = _newLimits;
+        if (_key.activeSelf && _key.transform.localEulerAngles == _rotationToOpen)
+        {
+            Unlock(); // appelle l'event
+        }
+    }
+
+    public void KeyIsIn()
+    {
         GameObject key = GetComponent<XRSocketInteractor>().GetOldestInteractableSelected().transform.gameObject;
         key.SetActive(false);
     }
+
+    public void Unlock()
+    {
+        Unlocked?.Invoke();
+    }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(LockScript))]
+public class LockScriptEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.DrawDefaultInspector();
+        if (GUILayout.Button("ForceUnlock", GUILayout.Width(363)))
+        {
+            LockScript script = (LockScript)target;
+            script.Unlock();
+        }
+    }
+}
+#endif
