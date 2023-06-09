@@ -7,12 +7,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class LockScript : MonoBehaviour
 {
     public GameObject _key;
-    public Vector3 _rotationToOpen;
+    public float _rotationToOpen;
     [SerializeField] private UnityEvent Unlocked; // permet d'avoir la liste des callback à un event
 
     private void FixedUpdate()
     {
-        if (_key.activeSelf && _key.transform.localEulerAngles == _rotationToOpen)
+        if (_key.activeSelf && _key.transform.localEulerAngles.x >= _rotationToOpen)
         {
             Unlock(); // appelle l'event
         }

@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: {fileID: 8304319232464692395}
-  _rotationToOpen: {x: 180, y: 0, z: 0}
+  _rotationToOpen: 40
   Unlocked:
     m_PersistentCalls:
       m_Calls:
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
