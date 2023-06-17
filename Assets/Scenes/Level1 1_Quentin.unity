@@ -10732,7 +10732,12 @@ PrefabInstance:
     - target: {fileID: 8106671638851635141, guid: 25f63333f592b164ab1f3f88496bd97c,
         type: 3}
       propertyPath: m_Spring.damper
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918995112602560391, guid: 25f63333f592b164ab1f3f88496bd97c,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f63333f592b164ab1f3f88496bd97c, type: 3}
