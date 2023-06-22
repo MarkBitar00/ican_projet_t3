@@ -19,6 +19,7 @@ public class MazePuzzleManager : MonoBehaviour
         {
             // TODO Play ball spawn sound
             Invoke(nameof(DeleteObjectComponent), 1f);
+            Debug.Log("Puzzle Completed");
         };
     }
     
