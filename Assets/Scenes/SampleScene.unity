@@ -17769,10 +17769,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1858936342}
-    - target: {fileID: 0}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 1858936342}
     - target: {fileID: 1531882003272528542, guid: d5fc97a5cc61d6444923807b2f375276,
         type: 3}
       propertyPath: m_RootOrder
@@ -17865,6 +17861,10 @@ PrefabInstance:
       objectReference: {fileID: 1858936342}
     - target: {fileID: 4370575573630879332, guid: d5fc97a5cc61d6444923807b2f375276,
         type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1858936342}
+    - target: {fileID: 0}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1858936342}
