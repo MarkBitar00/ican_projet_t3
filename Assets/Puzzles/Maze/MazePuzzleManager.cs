@@ -4,8 +4,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MazePuzzleManager : MonoBehaviour
 {
+    [SerializeField] private GameObject mazeBall;
     [SerializeField] private int numberOfPiecesToAttach;
+    
+    private Vector3 mazeBallSpawnPosition;
     private List<GameObject> currentlyAttachedPieces = new List<GameObject>();
+
+    private void Start()
+    {
+        if (mazeBall)
+        {
+            mazeBallSpawnPosition = mazeBall.transform.position;  
+        }
+    }
 
     public void AttachPiece(GameObject obj)
     {
@@ -19,7 +30,10 @@ public class MazePuzzleManager : MonoBehaviour
         {
             // TODO Play ball spawn sound
             Invoke(nameof(DeleteObjectComponent), 1f);
-            Debug.Log("Puzzle Completed");
+            if (mazeBall)
+            {
+                SpawnMazeBall();
+            }
         };
     }
     
@@ -32,8 +46,16 @@ public class MazePuzzleManager : MonoBehaviour
     {
         foreach (GameObject puzzlePiece in currentlyAttachedPieces.ToArray())
         {
-            puzzlePiece.GetComponent<XRGrabInteractable>().enabled = false;
+            Destroy(puzzlePiece.GetComponent<XRGrabInteractable>());
+            Destroy(puzzlePiece.GetComponent<BoxCollider>());
+            Destroy(puzzlePiece.GetComponent<Rigidbody>());
         }
-        // TODO spawn ball inside maze
+    }
+
+    private void SpawnMazeBall()
+    {
+        mazeBall.SetActive(true);
+        mazeBall.GetComponent<Rigidbody>().useGravity = true;
+        mazeBall.transform.position = mazeBallSpawnPosition;
     }
 }
