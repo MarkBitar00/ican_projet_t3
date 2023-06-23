@@ -1697,7 +1697,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ac9dda9cc44bc0e4d90741bbbdbbba1f, type: 2}
   PivotFeedback: {fileID: 314888413142130928}
   actualPower: 0
-  expectedPower: 10
+  expectedPower: 100
 --- !u!1 &5056179212398356387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ac9dda9cc44bc0e4d90741bbbdbbba1f, type: 2}
   PivotFeedback: {fileID: 7949071591255873396}
   actualPower: 0
-  expectedPower: 10
+  expectedPower: 100
 --- !u!1 &5830545769120049798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ac9dda9cc44bc0e4d90741bbbdbbba1f, type: 2}
   PivotFeedback: {fileID: 8224996006465841712}
   actualPower: 0
-  expectedPower: 10
+  expectedPower: 100
 --- !u!1 &7071664211985896648
 GameObject:
   m_ObjectHideFlags: 0
