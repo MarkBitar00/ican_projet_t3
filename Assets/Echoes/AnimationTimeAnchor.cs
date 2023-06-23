@@ -7,6 +7,7 @@ public class AnimationTimeAnchor : MonoBehaviour
 {
     public string eventToActivate;
     public MeshRenderer meshRenderer;
+    public SkinnedMeshRenderer skinMeshRenderer;
     public Animator animator;
 
     private void Start()
@@ -20,7 +21,8 @@ public class AnimationTimeAnchor : MonoBehaviour
     {
         if (_event == eventToActivate)
         {
-            meshRenderer.enabled = true;
+            if (meshRenderer != null) { meshRenderer.enabled = true; }
+            if (skinMeshRenderer != null) { skinMeshRenderer.enabled = true; }
             animator.enabled = true;
         }
         if (_event == GeneralManager.instance.animationRegulator.nameOfModifySpeedEvent)
@@ -29,7 +31,8 @@ public class AnimationTimeAnchor : MonoBehaviour
         }
         if (_event == GeneralManager.instance.animationRegulator.nameOfDeativationEvent)
         {
-            meshRenderer.enabled = false;
+            if(meshRenderer != null ) { meshRenderer.enabled = false;}
+            if(skinMeshRenderer != null) { skinMeshRenderer.enabled = false; }
             animator.enabled = false;
         }
     }
