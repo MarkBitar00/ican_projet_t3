@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class MazePuzzleManager : MonoBehaviour
 {
     [SerializeField] private GameObject mazeBall;
+    [SerializeField] private GameObject mazeBase;
     [SerializeField] private int numberOfPiecesToAttach;
     
     private Vector3 mazeBallSpawnPosition;
@@ -30,6 +31,10 @@ public class MazePuzzleManager : MonoBehaviour
         {
             // TODO Play ball spawn sound
             Invoke(nameof(DeleteObjectComponent), 1f);
+            if (mazeBase)
+            {
+                mazeBase.GetComponent<XRGrabInteractable>().enabled = true;
+            }
             if (mazeBall)
             {
                 SpawnMazeBall();
@@ -52,7 +57,7 @@ public class MazePuzzleManager : MonoBehaviour
         }
     }
 
-    private void SpawnMazeBall()
+    public void SpawnMazeBall()
     {
         mazeBall.SetActive(true);
         mazeBall.GetComponent<Rigidbody>().useGravity = true;
