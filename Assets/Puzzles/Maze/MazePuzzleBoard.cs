@@ -9,6 +9,7 @@ public class MazePuzzleBoard : MonoBehaviour
     {
         if (mazeBall && manager && collision.collider.gameObject == mazeBall)
         {
+            Debug.Log("Ball collision");
             manager.SpawnMazeBall();
         }
     }
