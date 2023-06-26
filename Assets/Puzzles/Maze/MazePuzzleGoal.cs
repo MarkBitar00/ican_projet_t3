@@ -1,14 +1,17 @@
+using System;
 using UnityEngine;
 
 public class MazePuzzleGoal : MonoBehaviour
 {
     [SerializeField] private GameObject mazeBall;
+    [SerializeField] private GameObject mazeBoard;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (mazeBall && collision.collider.gameObject == mazeBall)
+        if (mazeBall && mazeBoard && other.gameObject == mazeBall)
         {
             Debug.Log("You win !");
+            mazeBoard.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }

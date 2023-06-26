@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class MazePuzzleManager : MonoBehaviour
 {
     [SerializeField] private GameObject mazeBall;
-    [SerializeField] private GameObject mazeBase;
+    [SerializeField] private GameObject mazeBoard;
     [SerializeField] private int numberOfPiecesToAttach;
     
     private Vector3 mazeBallSpawnPosition;
@@ -29,11 +29,17 @@ public class MazePuzzleManager : MonoBehaviour
     {
         if (currentlyAttachedPieces.Count >= numberOfPiecesToAttach)
         {
-            // TODO Play ball spawn sound
+            Debug.Log("Puzzle completed");
             Invoke(nameof(DeleteObjectComponent), 1f);
-            if (mazeBase)
+            // var mazeRigidBody = transform.gameObject.GetComponent<Rigidbody>();
+            // mazeRigidBody.isKinematic = false;
+            // mazeRigidBody.useGravity = true;
+            var mazeGrab = transform.gameObject.AddComponent<XRGrabInteractable>();
+            mazeGrab.selectMode = InteractableSelectMode.Multiple;
+            mazeGrab.useDynamicAttach = true;
+            if (mazeBoard)
             {
-                mazeBase.GetComponent<XRGrabInteractable>().enabled = true;
+                mazeBoard.GetComponent<Renderer>().material.color = Color.cyan;
             }
             if (mazeBall)
             {
