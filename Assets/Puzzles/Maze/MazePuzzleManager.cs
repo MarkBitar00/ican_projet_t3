@@ -15,7 +15,7 @@ public class MazePuzzleManager : MonoBehaviour
     {
         if (mazeBall)
         {
-            mazeBallSpawnPosition = mazeBall.transform.position;  
+            mazeBallSpawnPosition = mazeBall.transform.localPosition;  
         }
     }
 
@@ -67,6 +67,6 @@ public class MazePuzzleManager : MonoBehaviour
     {
         mazeBall.SetActive(true);
         mazeBall.GetComponent<Rigidbody>().useGravity = true;
-        mazeBall.transform.position = mazeBallSpawnPosition;
+        mazeBall.transform.localPosition = mazeBallSpawnPosition;
     }
 }
