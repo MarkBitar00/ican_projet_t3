@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class WatchScript : MonoBehaviour
@@ -55,7 +56,7 @@ public class WatchScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_theNeedleHandle != null && _theNeedleHandle.transform.localEulerAngles.x > 5 && _theNeedleHandle.transform.localEulerAngles.x < 355  && _theNeedleHandle.GetComponent<XRGrabInteractable>().isSelected)
+        if (_theNeedleHandle != null && _theNeedleHandle.transform.localEulerAngles.x > 5 && _theNeedleHandle.transform.localEulerAngles.x < 355 && _theNeedleHandle.GetComponent<XRGrabInteractable>().isSelected)
         {
             float _input = _theNeedleHandle.transform.localEulerAngles.x;
             if (_input > 180)
@@ -64,6 +65,9 @@ public class WatchScript : MonoBehaviour
             }
             _input *= -1;
             InterceptHandleInteraction(_input / 45);
+        }
+        else {
+            InterceptHandleInteraction(0);
         }
     }
 
