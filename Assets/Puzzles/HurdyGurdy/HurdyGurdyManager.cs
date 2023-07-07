@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurdyGurdyManager : MonoBehaviour
 {
-    private int[][] puzzleMelody = new int[3][]{new int[]{3, 2, 1}, new int[]{5, 1, 3, 4, 3}, new int[]{5, 3, 4, 2, 3, 2, 1}};
+    private int[][] puzzleMelody = new int[3][]{new int[]{3, 5, 6, 2, 3}, new int[]{7, 4, 3, 6, 5}, new int[]{1, 5, 1, 2, 3}};
     private int melodyIndex = 0;
     private List<int> playedMelody = new List<int>();
     private bool isSolved = false;
