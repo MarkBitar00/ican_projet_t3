@@ -8,6 +8,7 @@ public class HurdyGurdyManager : MonoBehaviour
     private int melodyIndex = 0;
     private List<int> playedMelody = new List<int>();
     private bool isSolved = false;
+    private string[] resolutionSoundEvents = new string[3]{"HurdyGurdyResol1", "HurdyGurdyResol2", "HurdyGurdyResol3"};
 
     [SerializeField] public HurdyGurdyLever lever;
 
@@ -20,6 +21,7 @@ public class HurdyGurdyManager : MonoBehaviour
         {
             Debug.Log($"Played melody was : {string.Join(", ", playedMelody)}");
             Debug.Log("You win this round!");
+            FMODUnity.RuntimeManager.PlayOneShot($"event:/Sounds/{resolutionSoundEvents[melodyIndex]}");
             CheckIfAllMelodiesCompleted();
         }
         else
