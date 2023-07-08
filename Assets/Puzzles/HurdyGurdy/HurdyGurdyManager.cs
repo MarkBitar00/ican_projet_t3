@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HurdyGurdyManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class HurdyGurdyManager : MonoBehaviour
     private string[] resolutionSoundEvents = new string[3]{"HurdyGurdyResol1", "HurdyGurdyResol2", "HurdyGurdyResol3"};
 
     [SerializeField] public HurdyGurdyLever lever;
+    [SerializeField] private UnityEvent WhenSolved;
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
+    }
 
     public void AddNoteToSequence(int note)
     {

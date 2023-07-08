@@ -2531,7 +2531,7 @@ MonoBehaviour:
       Data2: 1200571217
       Data3: -1879505022
       Data4: 1516499410
-    Path: event:/Environement/Rails
+    Path: event:/Diegetic/Environement/Rails
   Event: 
   PlayEvent: 1
   StopEvent: 2

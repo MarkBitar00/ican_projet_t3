@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class MazePuzzleManager : MonoBehaviour
@@ -10,6 +11,12 @@ public class MazePuzzleManager : MonoBehaviour
     
     private Vector3 mazeBallSpawnPosition;
     private List<GameObject> currentlyAttachedPieces = new List<GameObject>();
+    [SerializeField] private UnityEvent WhenSolved;
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
+    }
 
     private void Start()
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TouchpadScript : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class TouchpadScript : MonoBehaviour
     private string _enteredPassword = "";
     public int _aditionalCondition;
     public HingeJoint interactableToUnlock;
+    [SerializeField] private UnityEvent WhenSolved;
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
+    }
 
     public void AddKeyToPassword(string _key)
     {

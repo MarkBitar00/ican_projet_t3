@@ -14,7 +14,12 @@ public class ChannelMachineScript : MonoBehaviour
 {
     
     public List<ChannelPillarState> pillars;
-    [SerializeField] private UnityEvent AllPillarAreGoods; // permet d'avoir la liste des callback à un event
+    [SerializeField] private UnityEvent WhenSolved;
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
+    }
     public void changeState(GameObject _pillar, bool _state) {
         bool allPillarsAreGood = true;
         foreach(ChannelPillarState pillar in pillars)
@@ -34,8 +39,6 @@ public class ChannelMachineScript : MonoBehaviour
         }
     }
 
-    public void Finished() {
-        AllPillarAreGoods.Invoke();
-    }
+    
 
 }

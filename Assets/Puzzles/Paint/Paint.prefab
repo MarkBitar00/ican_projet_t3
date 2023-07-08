@@ -484,7 +484,7 @@ MonoBehaviour:
       Data2: 1293552131
       Data3: 1076175771
       Data4: 822085212
-    Path: event:/Sounds/one
+    Path: event:/Diegetic/Sounds/one
   Event: 
   PlayEvent: 0
   StopEvent: 0

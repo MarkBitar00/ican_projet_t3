@@ -3056,7 +3056,7 @@ MonoBehaviour:
       Data2: 1211580330
       Data3: -92235089
       Data4: -2141787289
-    Path: event:/Musics/AmbianceMusic
+    Path: event:/UnDiegetic/Musics/AmbianceMusic
   Event: 
   PlayEvent: 0
   StopEvent: 0
