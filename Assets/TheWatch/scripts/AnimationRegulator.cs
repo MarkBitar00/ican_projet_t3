@@ -9,6 +9,7 @@ public class AnimationRegulator : MonoBehaviour
     public Dictionary<string,List<AnimationTimeAnchor>> animations = new Dictionary<string, List<AnimationTimeAnchor>>();
     public string nameOfModifySpeedEvent;
     public string nameOfDeativationEvent;
+    public float animationTime;
 
     public void SubscribeToEvent(string _eventToSubscribeTo, AnimationTimeAnchor _subcriber)
     {
@@ -27,6 +28,10 @@ public class AnimationRegulator : MonoBehaviour
             {
                 _subcribers.ReactToEvent(_eventName,_additionalParameter);
             }
+        }
+        if(_eventName == nameOfModifySpeedEvent)
+        {
+            animationTime = _additionalParameter;
         }
     }
 }
