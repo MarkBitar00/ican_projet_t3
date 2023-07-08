@@ -66,7 +66,7 @@ public class WatchScript : MonoBehaviour
             _input *= -1;
             InterceptHandleInteraction(_input / 45);
         }
-        else {
+        else if(echosManager.animationTime != 0) {
             InterceptHandleInteraction(0);
         }
     }
