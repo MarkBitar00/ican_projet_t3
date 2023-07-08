@@ -9,6 +9,7 @@ public class HurdyGurdyManager : MonoBehaviour
     private int melodyIndex = 0;
     private List<int> playedMelody = new List<int>();
     private bool isSolved = false;
+    private bool isPlayingResolutionMelody = false;
     private string[] resolutionSoundEvents = new string[3]{"ResolutionOne", "ResolutionTwo", "ResolutionThree"};
 
     [SerializeField] public HurdyGurdyLever lever;
@@ -28,7 +29,9 @@ public class HurdyGurdyManager : MonoBehaviour
         {
             Debug.Log($"Played melody was : {string.Join(", ", playedMelody)}");
             Debug.Log("You win this round!");
-            FMODUnity.RuntimeManager.PlayOneShot($"event:/Sounds/HurdyGurdy/{resolutionSoundEvents[melodyIndex]}");
+            isPlayingResolutionMelody = true;
+            FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{resolutionSoundEvents[melodyIndex]}");
+            Invoke(nameof(StopPlayingResolutionMelody), 7.5f);
             CheckIfAllMelodiesCompleted();
         }
         else
@@ -53,8 +56,18 @@ public class HurdyGurdyManager : MonoBehaviour
         }
     }
 
+    private void StopPlayingResolutionMelody()
+    {
+        isPlayingResolutionMelody = false;
+    }
+
     public bool GetIsSolved()
     {
         return isSolved;
+    }
+    
+    public bool GetIsPlayingResolutionMelody()
+    {
+        return isPlayingResolutionMelody;
     }
 }

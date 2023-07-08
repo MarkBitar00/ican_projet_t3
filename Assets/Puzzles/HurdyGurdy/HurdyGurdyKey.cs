@@ -9,8 +9,9 @@ public class HurdyGurdyKey : MonoBehaviour
     
     public void PlayNote()
     {
-        if (!melodyManager.lever.GetIsMoving()) return;
-        FMODUnity.RuntimeManager.PlayOneShot($"event:/Sounds/HurdyGurdy/{noteSoundEvents[note - 1]}");
+        if (!melodyManager.lever.GetIsMoving() || melodyManager.GetIsPlayingResolutionMelody()) return;
+        // GetComponent<Animator>().Play($"{noteSoundEvents[note - 1]}Anim");
+        FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{noteSoundEvents[note - 1]}");
         if (melodyManager.GetIsSolved()) return;
         melodyManager.AddNoteToSequence(note);
     }

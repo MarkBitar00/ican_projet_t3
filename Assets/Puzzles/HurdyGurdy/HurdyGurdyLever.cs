@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class HurdyGurdyLever : MonoBehaviour
 {
-    private bool isMoving = false;
+    // private bool isMoving = false;
+    private bool isMoving = true;
     private Rigidbody rigidBody;
 
     private void Start()
@@ -13,7 +14,7 @@ public class HurdyGurdyLever : MonoBehaviour
 
     private void Update()
     {
-        OnVelocityChanged();
+        // OnVelocityChanged();
     }
     
     private void OnVelocityChanged()

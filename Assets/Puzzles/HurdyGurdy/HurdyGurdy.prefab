@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 1086251956284428383}
   - component: {fileID: 1086251956284428376}
   - component: {fileID: 1086251956284428377}
+  - component: {fileID: 2496189904644389791}
+  - component: {fileID: 8551669598067133135}
   m_Layer: 6
   m_Name: Cube.131
   m_TagString: Untagged
@@ -264,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 6
 --- !u!114 &1086251956284428376
 MonoBehaviour:
@@ -380,6 +382,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0003152239, y: 0.00046006613, z: 0.0004999495}
   m_Center: {x: -0.00012962113, y: 0.00002218986, z: -4.6830656e-10}
+--- !u!95 &2496189904644389791
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086251956284428382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aaa98977a469c7e4c861d3be7ce3e276, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &8551669598067133135
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086251956284428382}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1479051346446936156
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +931,8 @@ GameObject:
   - component: {fileID: 2568031327067102672}
   - component: {fileID: 2568031327067102673}
   - component: {fileID: 2568031327067102674}
+  - component: {fileID: 2580112299693183818}
+  - component: {fileID: 2978750298360460828}
   m_Layer: 6
   m_Name: Cube.126
   m_TagString: Untagged
@@ -976,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 1
 --- !u!114 &2568031327067102673
 MonoBehaviour:
@@ -1092,6 +1133,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00029773242, y: 0.00043374437, z: 0.00060453534}
   m_Center: {x: -0.00008990988, y: 0.000009798978, z: -2.2468556e-10}
+--- !u!95 &2580112299693183818
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568031327067102679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0ccef9bfb0047540b86ff6ec3ef4d36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &2978750298360460828
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568031327067102679}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2825777841093299802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1716,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lever: {fileID: 5269203182241753800}
+  WhenSolved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4198804085415703092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2271,8 @@ GameObject:
   - component: {fileID: 3779478514541787857}
   - component: {fileID: 3779478514541787858}
   - component: {fileID: 3779478514541787859}
+  - component: {fileID: 8228365814005371980}
+  - component: {fileID: 4193673638453703019}
   m_Layer: 6
   m_Name: Cube.132
   m_TagString: Untagged
@@ -2274,7 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 7
 --- !u!114 &3779478514541787858
 MonoBehaviour:
@@ -2390,6 +2473,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0002556847, y: 0.0003479154, z: 0.0004204571}
   m_Center: {x: -0.00009701518, y: 0.000021910873, z: -2.6119816e-12}
+--- !u!95 &8228365814005371980
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504127605560495076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 655b45d573f02e4428f0063cecff879f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &4193673638453703019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504127605560495076}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5635598089166325614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2607,8 @@ GameObject:
   - component: {fileID: 9142074662711000430}
   - component: {fileID: 9142074662711000431}
   - component: {fileID: 9142074662711000424}
+  - component: {fileID: 5552525717714208276}
+  - component: {fileID: 3043522093553776070}
   m_Layer: 6
   m_Name: Cube.127
   m_TagString: Untagged
@@ -2571,7 +2693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 2
 --- !u!114 &9142074662711000431
 MonoBehaviour:
@@ -2687,6 +2809,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0002761459, y: 0.00034623907, z: 0.00051947474}
   m_Center: {x: -0.00021149375, y: 0.00010329756, z: -2.3583147e-10}
+--- !u!95 &5552525717714208276
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563346160338021568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d338b9c5263cafe4cb89423c5f27f7b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &3043522093553776070
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563346160338021568}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7040905525483389786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,6 +2860,8 @@ GameObject:
   - component: {fileID: 3687245012224702579}
   - component: {fileID: 3687245012224702540}
   - component: {fileID: 3687245012224702541}
+  - component: {fileID: 900288684798150048}
+  - component: {fileID: 5775193988394415815}
   m_Layer: 6
   m_Name: Cube.130
   m_TagString: Untagged
@@ -2785,7 +2946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 5
 --- !u!114 &3687245012224702540
 MonoBehaviour:
@@ -2901,6 +3062,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0002860703, y: 0.00038917924, z: 0.00050432445}
   m_Center: {x: -0.00009279219, y: 0.000012205247, z: -2.2497243e-10}
+--- !u!95 &900288684798150048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040905525483389786}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0398c8b7f90fa340b472750b9f2fb2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &5775193988394415815
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040905525483389786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7052788465229035622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,6 +3113,8 @@ GameObject:
   - component: {fileID: 3740230612931746381}
   - component: {fileID: 3740230612931746382}
   - component: {fileID: 3740230612931746383}
+  - component: {fileID: 3819499048697073975}
+  - component: {fileID: 5385486314947473328}
   m_Layer: 6
   m_Name: Cube.128
   m_TagString: Untagged
@@ -2999,7 +3199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 3
 --- !u!114 &3740230612931746382
 MonoBehaviour:
@@ -3115,6 +3315,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00032104304, y: 0.00046340347, z: 0.0004655343}
   m_Center: {x: -0.00012316463, y: 0.000029089988, z: -3.4677994e-12}
+--- !u!95 &3819499048697073975
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7052788465229035622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 372735273aa3787488c9355ca8358cc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &5385486314947473328
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7052788465229035622}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7175058058657502239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3449,8 @@ GameObject:
   - component: {fileID: 381681383246408460}
   - component: {fileID: 381681383246408461}
   - component: {fileID: 381681383246408462}
+  - component: {fileID: 6984715878754206749}
+  - component: {fileID: 3650801756835082969}
   m_Layer: 6
   m_Name: Cube.133
   m_TagString: Untagged
@@ -3296,7 +3535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 8
 --- !u!114 &381681383246408461
 MonoBehaviour:
@@ -3412,6 +3651,43 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.000305148, y: 0.00043299707, z: 0.0006224585}
   m_Center: {x: -0.00014816245, y: 0.00003793494, z: -2.2803964e-10}
+--- !u!95 &6984715878754206749
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242956377952129319}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2615a33d549360f49b727a8fab5dbc08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &3650801756835082969
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242956377952129319}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7736422933383511075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3951,8 @@ GameObject:
   - component: {fileID: 1298539082275566762}
   - component: {fileID: 1298539082275566763}
   - component: {fileID: 1298539082275566756}
+  - component: {fileID: 1753031939152505059}
+  - component: {fileID: 8332132268018782888}
   m_Layer: 6
   m_Name: Cube.129
   m_TagString: Untagged
@@ -3759,7 +4037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29b5dc852b86d34788125204df9cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyManager: {fileID: 0}
+  melodyManager: {fileID: 3845591200366963568}
   note: 4
 --- !u!114 &1298539082275566763
 MonoBehaviour:
@@ -3875,3 +4153,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00024309637, y: 0.0003686396, z: 0.0005554449}
   m_Center: {x: -0.000103947554, y: 0.00002177246, z: -2.5954816e-12}
+--- !u!95 &1753031939152505059
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281491811259210918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6404c0a217b39a34da1bfdd866600823, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &8332132268018782888
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281491811259210918}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
