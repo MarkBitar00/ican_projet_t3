@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b4c622de-81fd-4d36-81f6-ebc0e55f1df6}">
+		<property name="assetPath">
+			<value>Hurdy_8.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.1983673469387757</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c9c68d8e-2807-490d-8dfe-c85b87c689a2}</destination>
+		</relationship>
+	</object>
+</objects>
