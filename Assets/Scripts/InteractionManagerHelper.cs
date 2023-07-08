@@ -1,4 +1,5 @@
 using Autodesk.Fbx;
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,9 +54,14 @@ public class InteractionManagerHelperEditor : Editor
                 {
                     EditorGUILayout.BeginHorizontal();
                     string _isLoaded = "loaded";
+                    string _isFeedbacked = "feedbacked";
                     if (_object.interactionManager == null || _object.interactionManager != FindObjectsOfType<XRInteractionManager>()[0])
                     {
                         _isLoaded = "";
+                    }
+                    if (_object.GetComponent<StudioEventEmitter>() == null || _object.GetComponent<StudioEventEmitter>().EventReference.Equals(null))
+                    {
+                        _isFeedbacked = "";
                     }
                     string _type = _object.GetType() + "";
                     _type = _type.Split('.')[4];
@@ -65,6 +71,7 @@ public class InteractionManagerHelperEditor : Editor
                     }
                     EditorGUILayout.LabelField(_type, GUILayout.Width(150));
                     EditorGUILayout.LabelField(_isLoaded, GUILayout.Width(100));
+                    EditorGUILayout.LabelField(_isFeedbacked, GUILayout.Width(100));
                     EditorGUILayout.EndHorizontal();
                 }
             }
