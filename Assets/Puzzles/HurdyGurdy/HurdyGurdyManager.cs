@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class HurdyGurdyManager : MonoBehaviour
 {
-    private int[][] puzzleMelody = new int[3][]{new int[]{3, 2, 1}, new int[]{5, 1, 3, 4, 3}, new int[]{5, 3, 4, 2, 3, 2, 1}};
+    private int[][] puzzleMelody = new int[3][]{new int[]{3, 5, 6, 2, 3}, new int[]{7, 4, 3, 6, 5}, new int[]{1, 5, 1, 2, 3}};
     private int melodyIndex = 0;
     private List<int> playedMelody = new List<int>();
     private bool isSolved = false;
+    private string[] resolutionSoundEvents = new string[3]{"HurdyGurdyResol1", "HurdyGurdyResol2", "HurdyGurdyResol3"};
 
     [SerializeField] public HurdyGurdyLever lever;
 
@@ -20,6 +21,7 @@ public class HurdyGurdyManager : MonoBehaviour
         {
             Debug.Log($"Played melody was : {string.Join(", ", playedMelody)}");
             Debug.Log("You win this round!");
+            FMODUnity.RuntimeManager.PlayOneShot($"event:/Sounds/{resolutionSoundEvents[melodyIndex]}");
             CheckIfAllMelodiesCompleted();
         }
         else
