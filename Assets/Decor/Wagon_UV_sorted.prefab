@@ -8347,6 +8347,7 @@ GameObject:
   - component: {fileID: 4223448575242640659}
   - component: {fileID: 2764206611078437073}
   - component: {fileID: 8484697715991130604}
+  - component: {fileID: 8684730054431301270}
   m_Layer: 0
   m_Name: valve
   m_TagString: Untagged
@@ -8606,6 +8607,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &8684730054431301270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672382179283346224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00014526522, y: 0.0008550827, z: 0.0008550827}
+  m_Center: {x: 0.00005840945, y: 0.0000000037252903, z: 7.477707e-24}
 --- !u!1 &3703738760209995428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12275,6 +12289,7 @@ GameObject:
   - component: {fileID: 8572440471067001399}
   - component: {fileID: 4263790069368701738}
   - component: {fileID: 220510258898598468}
+  - component: {fileID: 2267169894278340905}
   m_Layer: 0
   m_Name: valve
   m_TagString: Untagged
@@ -12534,6 +12549,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &2267169894278340905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183438355976274716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00012747507, y: 0.0008550827, z: 0.0008550827}
+  m_Center: {x: 0.00006730457, y: -0.0000000037252903, z: -7.477707e-24}
 --- !u!1 &5213016140714935170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13378,6 +13406,7 @@ GameObject:
   - component: {fileID: 4993966110797676803}
   - component: {fileID: 2000019717115047929}
   - component: {fileID: 830103895654251193}
+  - component: {fileID: 6013550259124454631}
   m_Layer: 0
   m_Name: valve
   m_TagString: Untagged
@@ -13637,6 +13666,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &6013550259124454631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545602332424724931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00008721303, y: 0.0008550827, z: 0.0008550827}
+  m_Center: {x: 0.0000874356, y: -0, z: 0}
 --- !u!1 &5578152528157136923
 GameObject:
   m_ObjectHideFlags: 0
@@ -21541,6 +21583,7 @@ GameObject:
   - component: {fileID: 3706464852294881911}
   - component: {fileID: 620577539510531195}
   - component: {fileID: 2986424742359906887}
+  - component: {fileID: 3766386018403809813}
   m_Layer: 0
   m_Name: valve
   m_TagString: Untagged
@@ -21800,6 +21843,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &3766386018403809813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827109786639193025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00009081162, y: 0.0008550827, z: 0.0008550827}
+  m_Center: {x: 0.00008563626, y: -1.1415086e-24, z: 4.842877e-10}
 --- !u!1 &8855777888239899575
 GameObject:
   m_ObjectHideFlags: 0
