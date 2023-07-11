@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using Object = UnityEngine.Object;
 
 public class HurdyGurdyManager : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class HurdyGurdyManager : MonoBehaviour
 
     private void Awake()
     {
-        keysList = Object.FindObjectsOfType<HurdyGurdyKey>();
+        keysList = FindObjectsOfType<HurdyGurdyKey>();
     }
 
     public void AddNoteToSequence(int note)

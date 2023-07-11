@@ -4620,11 +4620,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1858936342}
-    - target: {fileID: 5269203182241753802, guid: a1cc4c11e365db44a857cf9f93d0d01c,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5269203182241753805, guid: a1cc4c11e365db44a857cf9f93d0d01c,
         type: 3}
       propertyPath: m_Layer
@@ -4819,6 +4814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HurdyGurdyTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 127481561221693206, guid: 50b0d8a825fc3f84f8a83d87f19b9f07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 668688206104820450, guid: 50b0d8a825fc3f84f8a83d87f19b9f07,
         type: 3}
