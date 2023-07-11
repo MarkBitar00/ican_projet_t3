@@ -8349,7 +8349,7 @@ GameObject:
   - component: {fileID: 8484697715991130604}
   - component: {fileID: 8684730054431301270}
   m_Layer: 0
-  m_Name: valve
+  m_Name: valve3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12291,7 +12291,7 @@ GameObject:
   - component: {fileID: 220510258898598468}
   - component: {fileID: 2267169894278340905}
   m_Layer: 0
-  m_Name: valve
+  m_Name: valve4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13408,7 +13408,7 @@ GameObject:
   - component: {fileID: 830103895654251193}
   - component: {fileID: 6013550259124454631}
   m_Layer: 0
-  m_Name: valve
+  m_Name: valve2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18529,6 +18529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7856051832482536035}
+  - component: {fileID: 6605502895329952253}
   m_Layer: 0
   m_Name: Valves
   m_TagString: Untagged
@@ -18555,6 +18556,27 @@ Transform:
   m_Father: {fileID: 7856051832573864640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6605502895329952253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856051832482536032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94acacde2bdf9654ca96efec9af73fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Valves:
+  - valve: {fileID: 8827109786639193025}
+    TargetRotation: 170
+  - valve: {fileID: 5545602332424724931}
+    TargetRotation: -170
+  - valve: {fileID: 3672382179283346224}
+    TargetRotation: 170
+  - valve: {fileID: 5183438355976274716}
+    TargetRotation: -170
 --- !u!1 &7856051832573864641
 GameObject:
   m_ObjectHideFlags: 0
@@ -21585,7 +21607,7 @@ GameObject:
   - component: {fileID: 2986424742359906887}
   - component: {fileID: 3766386018403809813}
   m_Layer: 0
-  m_Name: valve
+  m_Name: valve1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
