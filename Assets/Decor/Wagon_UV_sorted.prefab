@@ -8347,7 +8347,7 @@ GameObject:
   - component: {fileID: 4223448575242640659}
   - component: {fileID: 2764206611078437073}
   - component: {fileID: 8484697715991130604}
-  - component: {fileID: 8684730054431301270}
+  - component: {fileID: 8985188120656700395}
   m_Layer: 0
   m_Name: valve3
   m_TagString: Untagged
@@ -8362,7 +8362,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3672382179283346224}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0994, y: 1.522, z: 1.6269}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -8533,16 +8533,16 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 0
+  m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -8582,7 +8582,7 @@ HingeJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
@@ -8596,8 +8596,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -178
-    max: 178
+    min: -170
+    max: 170
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -8607,8 +8607,8 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &8684730054431301270
-BoxCollider:
+--- !u!64 &8985188120656700395
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8617,9 +8617,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.00014526522, y: 0.0008550827, z: 0.0008550827}
-  m_Center: {x: 0.00005840945, y: 0.0000000037252903, z: 7.477707e-24}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8333472439089826833, guid: e846b51a569f4f34c82584741e13cc39, type: 3}
 --- !u!1 &3703738760209995428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12289,7 +12290,7 @@ GameObject:
   - component: {fileID: 8572440471067001399}
   - component: {fileID: 4263790069368701738}
   - component: {fileID: 220510258898598468}
-  - component: {fileID: 2267169894278340905}
+  - component: {fileID: 1691090172824597711}
   m_Layer: 0
   m_Name: valve4
   m_TagString: Untagged
@@ -12304,7 +12305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5183438355976274716}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0994, y: 1.6259999, z: 1.5383}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -12475,16 +12476,16 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 0
+  m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -12524,7 +12525,7 @@ HingeJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
@@ -12538,8 +12539,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -178
-    max: 178
+    min: -170
+    max: 170
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -12549,8 +12550,8 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &2267169894278340905
-BoxCollider:
+--- !u!64 &1691090172824597711
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12559,9 +12560,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.00012747507, y: 0.0008550827, z: 0.0008550827}
-  m_Center: {x: 0.00006730457, y: -0.0000000037252903, z: -7.477707e-24}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8333472439089826833, guid: e846b51a569f4f34c82584741e13cc39, type: 3}
 --- !u!1 &5213016140714935170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13406,7 +13408,7 @@ GameObject:
   - component: {fileID: 4993966110797676803}
   - component: {fileID: 2000019717115047929}
   - component: {fileID: 830103895654251193}
-  - component: {fileID: 6013550259124454631}
+  - component: {fileID: 6759290429250272427}
   m_Layer: 0
   m_Name: valve2
   m_TagString: Untagged
@@ -13421,8 +13423,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545602332424724931}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.0994, y: 0.795, z: 1.6224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1137, y: 0.795, z: 1.6224}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13436,7 +13438,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545602332424724931}
-  m_Mesh: {fileID: -8333472439089826833, guid: e846b51a569f4f34c82584741e13cc39, type: 3}
+  m_Mesh: {fileID: -8333472439089826833, guid: 4895c4fbfd31a6640853fd6348fc0a0b, type: 3}
 --- !u!23 &8511522458141757303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13592,16 +13594,16 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 0
+  m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -13641,7 +13643,7 @@ HingeJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
@@ -13655,8 +13657,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -178
-    max: 178
+    min: -170
+    max: 170
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -13666,8 +13668,8 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &6013550259124454631
-BoxCollider:
+--- !u!64 &6759290429250272427
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13676,9 +13678,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.00008721303, y: 0.0008550827, z: 0.0008550827}
-  m_Center: {x: 0.0000874356, y: -0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8333472439089826833, guid: 4895c4fbfd31a6640853fd6348fc0a0b, type: 3}
 --- !u!1 &5578152528157136923
 GameObject:
   m_ObjectHideFlags: 0
@@ -18577,6 +18580,10 @@ MonoBehaviour:
     TargetRotation: 170
   - valve: {fileID: 5183438355976274716}
     TargetRotation: -170
+  accuracy: 0
+  WhenSolved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7856051832573864641
 GameObject:
   m_ObjectHideFlags: 0
@@ -21605,7 +21612,7 @@ GameObject:
   - component: {fileID: 3706464852294881911}
   - component: {fileID: 620577539510531195}
   - component: {fileID: 2986424742359906887}
-  - component: {fileID: 3766386018403809813}
+  - component: {fileID: 2193699667514090435}
   m_Layer: 0
   m_Name: valve1
   m_TagString: Untagged
@@ -21620,8 +21627,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8827109786639193025}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.0994, y: 0.698, z: 1.5383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1126, y: 0.6977, z: 1.5391}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21635,7 +21642,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8827109786639193025}
-  m_Mesh: {fileID: -8333472439089826833, guid: e846b51a569f4f34c82584741e13cc39, type: 3}
+  m_Mesh: {fileID: -8333472439089826833, guid: 4895c4fbfd31a6640853fd6348fc0a0b, type: 3}
 --- !u!23 &7025841802342003220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21791,16 +21798,16 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 0
+  m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -21840,7 +21847,7 @@ HingeJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
@@ -21854,8 +21861,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -178
-    max: 178
+    min: -170
+    max: 170
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -21865,19 +21872,20 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &3766386018403809813
-BoxCollider:
+--- !u!64 &2193699667514090435
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8827109786639193025}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.00009081162, y: 0.0008550827, z: 0.0008550827}
-  m_Center: {x: 0.00008563626, y: -1.1415086e-24, z: 4.842877e-10}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8333472439089826833, guid: 4895c4fbfd31a6640853fd6348fc0a0b, type: 3}
 --- !u!1 &8855777888239899575
 GameObject:
   m_ObjectHideFlags: 0
