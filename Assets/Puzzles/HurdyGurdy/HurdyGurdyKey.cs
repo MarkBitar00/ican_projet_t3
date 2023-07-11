@@ -41,6 +41,9 @@ public class HurdyGurdyKey : MonoBehaviour
 
     public void PlayNote(SelectEnterEventArgs arg0)
     {
+        Debug.Log(arg0.interactorObject.GetType() == typeof(XRDirectInteractor));
+        Debug.Log(!melodyManager.lever.GetIsMoving());
+        Debug.Log(melodyManager.GetIsPlayingResolutionMelody());
         if (arg0.interactorObject.GetType() == typeof(XRDirectInteractor) || !melodyManager.lever.GetIsMoving() || melodyManager.GetIsPlayingResolutionMelody()) return;
         animator.SetTrigger("PlayNote");
         FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{noteSoundEvents[note - 1]}");
