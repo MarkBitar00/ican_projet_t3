@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using Object = UnityEngine.Object;
 
 public class HurdyGurdyManager : MonoBehaviour
 {
@@ -11,13 +13,14 @@ public class HurdyGurdyManager : MonoBehaviour
     private bool isSolved = false;
     private bool isPlayingResolutionMelody = false;
     private string[] resolutionSoundEvents = new string[3]{"ResolutionOne", "ResolutionTwo", "ResolutionThree"};
+    private HurdyGurdyKey[] keysList;
 
     [SerializeField] public HurdyGurdyLever lever;
     [SerializeField] private UnityEvent WhenSolved;
 
-    public void Finished()
+    private void Awake()
     {
-        WhenSolved.Invoke();
+        keysList = Object.FindObjectsOfType<HurdyGurdyKey>();
     }
 
     public void AddNoteToSequence(int note)
@@ -29,9 +32,7 @@ public class HurdyGurdyManager : MonoBehaviour
         {
             Debug.Log($"Played melody was : {string.Join(", ", playedMelody)}");
             Debug.Log("You win this round!");
-            isPlayingResolutionMelody = true;
-            FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{resolutionSoundEvents[melodyIndex]}");
-            Invoke(nameof(StopPlayingResolutionMelody), 7.5f);
+            StartPlayingResolutionMelody();
             CheckIfAllMelodiesCompleted();
         }
         else
@@ -56,9 +57,24 @@ public class HurdyGurdyManager : MonoBehaviour
         }
     }
 
+    private void StartPlayingResolutionMelody()
+    {
+        isPlayingResolutionMelody = true;
+        FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{resolutionSoundEvents[melodyIndex]}");
+        foreach (var key in keysList)
+        {
+            key.SetIsPlayingResolutionMelody(true);
+        }
+        Invoke(nameof(StopPlayingResolutionMelody), 7f);
+    }
+
     private void StopPlayingResolutionMelody()
     {
         isPlayingResolutionMelody = false;
+        foreach (var key in keysList)
+        {
+            key.SetIsPlayingResolutionMelody(false);
+        }
     }
 
     public bool GetIsSolved()
@@ -69,5 +85,10 @@ public class HurdyGurdyManager : MonoBehaviour
     public bool GetIsPlayingResolutionMelody()
     {
         return isPlayingResolutionMelody;
+    }
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
     }
 }
