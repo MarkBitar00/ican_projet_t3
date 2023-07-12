@@ -9,14 +9,16 @@ public class HurdyGurdyManager : MonoBehaviour
     private int melodyIndex = 0;
     private List<int> playedMelody = new List<int>();
     private bool isSolved = false;
-    private string[] resolutionSoundEvents = new string[3]{"HurdyGurdyResol1", "HurdyGurdyResol2", "HurdyGurdyResol3"};
+    private bool isPlayingResolutionMelody = false;
+    private string[] resolutionSoundEvents = new string[3]{"ResolutionOne", "ResolutionTwo", "ResolutionThree"};
+    private HurdyGurdyKey[] keysList;
 
     [SerializeField] public HurdyGurdyLever lever;
     [SerializeField] private UnityEvent WhenSolved;
 
-    public void Finished()
+    private void Awake()
     {
-        WhenSolved.Invoke();
+        keysList = FindObjectsOfType<HurdyGurdyKey>();
     }
 
     public void AddNoteToSequence(int note)
@@ -28,7 +30,7 @@ public class HurdyGurdyManager : MonoBehaviour
         {
             Debug.Log($"Played melody was : {string.Join(", ", playedMelody)}");
             Debug.Log("You win this round!");
-            FMODUnity.RuntimeManager.PlayOneShot($"event:/Sounds/{resolutionSoundEvents[melodyIndex]}");
+            StartPlayingResolutionMelody();
             CheckIfAllMelodiesCompleted();
         }
         else
@@ -53,8 +55,38 @@ public class HurdyGurdyManager : MonoBehaviour
         }
     }
 
+    private void StartPlayingResolutionMelody()
+    {
+        isPlayingResolutionMelody = true;
+        FMODUnity.RuntimeManager.PlayOneShot($"event:/Diegetic/Sounds/HurdyGurdy/{resolutionSoundEvents[melodyIndex]}");
+        foreach (var key in keysList)
+        {
+            key.SetIsPlayingResolutionMelody(true);
+        }
+        Invoke(nameof(StopPlayingResolutionMelody), 7f);
+    }
+
+    private void StopPlayingResolutionMelody()
+    {
+        isPlayingResolutionMelody = false;
+        foreach (var key in keysList)
+        {
+            key.SetIsPlayingResolutionMelody(false);
+        }
+    }
+
     public bool GetIsSolved()
     {
         return isSolved;
+    }
+    
+    public bool GetIsPlayingResolutionMelody()
+    {
+        return isPlayingResolutionMelody;
+    }
+
+    public void Finished()
+    {
+        WhenSolved.Invoke();
     }
 }

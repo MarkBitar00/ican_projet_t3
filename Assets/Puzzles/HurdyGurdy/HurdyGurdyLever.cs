@@ -19,7 +19,7 @@ public class HurdyGurdyLever : MonoBehaviour
     private void OnVelocityChanged()
     {
         var currentAngularVelocity = rigidBody.angularVelocity;
-        var currentValue = currentAngularVelocity.z;
+        var currentValue = currentAngularVelocity.x;
         if (!currentAngularVelocity.Equals(Vector3.zero) && Math.Abs(currentValue) > 0.1f && currentValue > 0)
         {
             isMoving = true;
