@@ -42,7 +42,7 @@ public class HurdyGurdyKey : MonoBehaviour
     public void PlayNote(SelectEnterEventArgs arg0)
     {
         // Debug.Log(arg0.interactorObject.GetType() == typeof(XRDirectInteractor));
-        Debug.Log($"Lever is moving {!melodyManager.lever.GetIsMoving()}");
+        Debug.Log($"Lever is moving {melodyManager.lever.GetIsMoving()}");
         Debug.Log($"Is playing resol melody {melodyManager.GetIsPlayingResolutionMelody()}");
         // if (arg0.interactorObject.GetType() == typeof(XRDirectInteractor) || !melodyManager.lever.GetIsMoving() || melodyManager.GetIsPlayingResolutionMelody()) return;
         if (!melodyManager.lever.GetIsMoving() || melodyManager.GetIsPlayingResolutionMelody()) return;
